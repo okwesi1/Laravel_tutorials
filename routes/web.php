@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get('/', [AboutController::class, 'sayHelloToGirls']);
+// Route::get('/myform', [AboutController::class, 'showForm']);
+// Route::post('/submit', [AboutController::class, 'getFormData']);
+
+// Route::prefix('abcd')->group(function(){
+//     Route::get('/myform', [AboutController::class, 'showForm']);
+//     Route::post('/submit', [AboutController::class, 'getFormData']);
+// });
+
+Route::prefix('abcd')->group(function(){
+    Route::get('/myform', [AboutController::class, 'showForm']);
+    Route::post('/submit', [AboutController::class, 'getFormData']);
 });
+
+// Route::controller(AboutController::class)
+// ->prefix('')
