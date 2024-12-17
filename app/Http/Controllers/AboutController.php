@@ -20,4 +20,5 @@ class AboutController extends Controller
     public function getFormData(Request $abcd){
         dd($abcd->all());
     }
+
 }
