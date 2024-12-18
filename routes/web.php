@@ -19,18 +19,19 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // Route::get('/', [AboutController::class, 'sayHelloToGirls']);
-// Route::get('/myform', [AboutController::class, 'showForm']);
-// Route::post('/submit', [AboutController::class, 'getFormData']);
+Route::get('/myform', [AboutController::class, 'showForm'])->name('myform');
+Route::post('/submit', [AboutController::class, 'getFormData'])->name('submit');
 
 // Route::prefix('abcd')->group(function(){
 //     Route::get('/myform', [AboutController::class, 'showForm']);
 //     Route::post('/submit', [AboutController::class, 'getFormData']);
 // });
 
-Route::prefix('abcd')->group(function(){
-    Route::get('/myform', [AboutController::class, 'showForm']);
-    Route::post('/submit', [AboutController::class, 'getFormData']);
-});
+// Route::prefix('abcd')->group(function(){
+//     Route::get('/myform', [AboutController::class, 'showForm']);
+//     Route::post('/submit', [AboutController::class, 'getFormData']);
+// });
 
-// Route::controller(AboutController::class)
-// ->prefix('')
+Route::get('about/{id}', [AboutController::class, 'showEditPage'])->name('edit.about');
+
+Route::post('update/{id}', [AboutController::class, 'updateAboutData'])->name('update');

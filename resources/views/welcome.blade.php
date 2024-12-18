@@ -14,7 +14,7 @@
     </head>
     <body class="antialiased">
        <h1>SAMPLE FORM</h1>
-       <form action="{{url('abcd/submit')}}" method="POST">
+       <form action="{{route('submit')}}" method="POST">
        {{-- <form action="{{route('abeiku.richard.foster')}}" method="POST"> --}}
         @csrf
         <label for="">Name</label><br>
@@ -23,5 +23,25 @@
         <input type="text" name="myAge" id=""><br><br>
         <button type="submit">Send to controller</button>
        </form>
+
+       <div>
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>Name</th>
+            <th>Age</th>
+            </thead>
+            <tbody>
+                @foreach ($abouts as $about)
+                    <tr>
+                        <td>{{$about->id}}</td>
+                        <td>{{$about->name}}</td>
+                        <td>{{$about->age}}</td>
+                        <td><a href="{{route('edit.about', $about->id)}}">Edit</a></td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+       </div>
     </body>
 </html>
