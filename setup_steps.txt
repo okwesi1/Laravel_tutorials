@@ -1,3 +1,25 @@
 1. Create .env file
 2. Composer install
 3. Generate APP key
+
+1. Just as we have been doing. We are first going to use a direct route in the address bar of our browser let's assume we are using:
+
+127.0.0.1:8000/users?name=Abeiku&age=300
+
+127.0.0.1:8000/users == This the main route
+
+? ===  This indicates that we want to send/pass some query parameters
+
+name=Abeiku === This is the first query parameter (Every query parameter consists of two parts name: key and value). In this example, "name" is the key whereas "Abeiku" is the value.
+
+& === This is used to separate one query string from another. The count of & depends on the number of query parameters
+
+age=300 === This is the second query parameter
+
+Let's assume we want to add a new query parameter called "company". In this instance, we would need to separate the "company" from the "age" by using thw symbol &. The final url becomes:
+
+127.0.0.1:8000/users?name=Abeiku&age=300&company=GWOSEVO
+
+Kindly confirm in the chat if you have gotten the clarity. Is Richard with us? Okay
+
+Let's go to our AboutController and define a function
