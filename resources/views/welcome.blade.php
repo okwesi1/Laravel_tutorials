@@ -29,7 +29,7 @@
             <thead>
                 <th>ID</th>
                 <th>Name</th>
-            <th>Age</th>
+                <th>Age</th>
             </thead>
             <tbody>
                 @foreach ($abouts as $about)
