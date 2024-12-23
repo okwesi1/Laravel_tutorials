@@ -37,24 +37,25 @@ class AboutController extends Controller
         return view('about_edit', compact('data'));
     }
 
-    public function updateAboutData(Request $request, $id)
-    {
-        // dd($request->all(), $id);
 
-        $data = About::query()->find($id);
-        if ($data !== null) {
-            $name = $request->input('myName');
-            $age = $request->myAge;
-            // DB::insert("UPDATE abouts SET name = ?, age = ? WHERE id = $id", [$name, $age]);
-            $data->update([
-                'name' => $name,
-                'age' => $age
-            ]);
+    // public function updateAboutData(Request $request, $id)
+    // {
+    //     // dd($request->all(), $id);
 
-            return 'Hey programmer, it has worked';
-        } else {
+    //     $data = About::query()->find($id);
+    //     if ($data !== null) {
+    //         $name = $request->input('myName');
+    //         $age = $request->myAge;
+    //         // DB::insert("UPDATE abouts SET name = ?, age = ? WHERE id = $id", [$name, $age]);
+    //         $data->update([
+    //             'name' => $name,
+    //             'age' => $age
+    //         ]);
 
-        }
+    //         return 'Hey programmer, it has worked';
+    //     } else {
 
-    }
+    //     }
+
+    // }
 }
