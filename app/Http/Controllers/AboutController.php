@@ -15,12 +15,14 @@ class AboutController extends Controller
     //     //MVC architecture
     // }
 
-    public function showForm(){
+    public function showForm()
+    {
         $abouts = About::query()->get();
         return view('welcome', compact('abouts'));
     }
 
-    public function getFormData(Request $abcd){
+    public function getFormData(Request $abcd)
+    {
         dd($abcd->all());
     }
 
@@ -52,10 +54,10 @@ class AboutController extends Controller
     //             'age' => $age
     //         ]);
 
-    //         return 'Hey programmer, it has worked';
-    //     } else {
+            return 'Hey programmer, it has worked';
+        } else {
 
-    //     }
+        }
 
-    // }
+    }
 }

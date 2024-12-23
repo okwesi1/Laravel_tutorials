@@ -34,4 +34,4 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('about/{id}', [AboutController::class, 'showEditPage'])->name('edit.about');
 
-// Route::post('update/{id}', [AboutController::class, 'updateAboutData'])->name('update');
+Route::post('update/{id}', [AboutController::class, 'updateAboutData'])->name('update');
