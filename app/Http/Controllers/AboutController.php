@@ -15,29 +15,29 @@ class AboutController extends Controller
     //     //MVC architecture
     // }
 
-    public function showForm()
-    {
-        $abouts = About::query()->get();
-        return view('welcome', compact('abouts'));
-    }
+    // public function showForm()
+    // {
+    //     $abouts = About::query()->get();
+    //     return view('welcome', compact('abouts'));
+    // }
 
-    public function getFormData(Request $abcd)
-    {
-        dd($abcd->all());
-    }
+    // public function getFormData(Request $abcd)
+    // {
+    //     dd($abcd->all());
+    // }
 
-    public function getAboutData($id)
-    {
-        // dd($id);
-        $data = About::query()->find($id);
-        dd($data);
-    }
+    // public function getAboutData($id)
+    // {
+    //     // dd($id);
+    //     $data = About::query()->find($id);
+    //     dd($data);
+    // }
 
-    public function showEditPage($id)
-    {
-        $data = About::query()->find($id);
-        return view('about_edit', compact('data'));
-    }
+    // public function showEditPage($id)
+    // {
+    //     $data = About::query()->find($id);
+    //     return view('about_edit', compact('data'));
+    // }
 
 
     // public function updateAboutData(Request $request, $id)
@@ -54,10 +54,11 @@ class AboutController extends Controller
     //             'age' => $age
     //         ]);
 
-            return 'Hey programmer, it has worked';
-        } else {
+//             return 'Hey programmer, it has worked';
+//         } else {
 
-        }
+//         }
 
-    }
+//     }
+// }
 }
