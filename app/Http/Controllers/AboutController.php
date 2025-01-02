@@ -54,11 +54,11 @@ class AboutController extends Controller
     //             'age' => $age
     //         ]);
 
-//             return 'Hey programmer, it has worked';
-//         } else {
+    //         return 'Hey programmer, it has worked';
+    //     } else {
 
-//         }
+    //     }
 
-//     }
+    // }
 // }
 }
