@@ -45,3 +45,11 @@ Route::get('users', [AboutController::class, 'getQueryParameters']);
 //The most important thing is the main route. Query parameters are not part of the main route. Route parameters are the ones that are part of the main route.
 
 //In essence,
+
+Route::get('show-page-one', function(){
+    return view('telecel_widget.page_one');
+});
+
+Route::get('redirect', function(){
+    return view('telecel_widget.page_two');
+});
