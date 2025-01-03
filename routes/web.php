@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-// Route::get('/', [AboutController::class, 'sayHelloToGirls']);
+Route::get('/', [AboutController::class, 'sayHelloToGirls']);
 Route::get('/myform', [AboutController::class, 'showForm'])->name('myform');
 Route::post('/submit', [AboutController::class, 'getFormData'])->name('submit');
 
@@ -45,3 +46,9 @@ Route::get('users', [AboutController::class, 'getQueryParameters']);
 //The most important thing is the main route. Query parameters are not part of the main route. Route parameters are the ones that are part of the main route.
 
 //In essence,
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/', [ProductController::class, 'display'])->name('products.display');
+
+Route::get('/form', function () {
+    return view('form');
+});
