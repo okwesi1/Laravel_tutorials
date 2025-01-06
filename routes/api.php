@@ -1,8 +1,12 @@
 <?php
 
+use App\Helpers\FirebaseService;
+use App\Notifications\CustomFirebaseNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Notification;
+use NotificationChannels\Fcm\FcmMessage;
+// use NotificationChannels\Fcm\Resources\Notification;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +18,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::post('test', function () {
+    try {
+        $user_token = 'fR9k1VS4TeaKEUFIYwIg7_:APA91bHYZP6qkhpyGUyIRZo5mHUEVJVi7c2TqnoHgb0z73F20xTPYnHe2OcnTOLa1tawOVFY5nKinKx4NIeb8eghnThRMFxGWPpQXAjmzEbqW9ZObrFPjac';
+
+        // Notification::route('fcm', $user_token)
+        // ->notify(new CustomFirebaseNotification('FIRST PUSH NOTIFICATION', 'Hello world'));
+
+        $firebaseService = new FirebaseService();
+        $firebaseService->sendNotification($user_token, 'Test Title', 'Test Body');
+
+
+        return response()->json([
+            'success' => 'true',
+            'message' => 'Token found',
+            'token' => $user_token
+        ]);
+    } catch (\Throwable $th) {
+        return response()->json([
+            'success' => 'false',
+            'message' => $th->getMessage() . ', Line: ' . $th->getLine(),
+        ]);
+    }
 });

@@ -31,4 +31,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'firebase' => [
+    'credentials' => storage_path('app/firebase/mcini-mobile-app-firebase-adminsdk-58wzp-8518450fca.json'),
+],
+
 ];
