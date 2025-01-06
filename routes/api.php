@@ -24,19 +24,19 @@ use NotificationChannels\Fcm\FcmMessage;
 
 Route::post('test', function () {
     try {
-        $user_token = 'fR9k1VS4TeaKEUFIYwIg7_:APA91bHYZP6qkhpyGUyIRZo5mHUEVJVi7c2TqnoHgb0z73F20xTPYnHe2OcnTOLa1tawOVFY5nKinKx4NIeb8eghnThRMFxGWPpQXAjmzEbqW9ZObrFPjac';
+        $multiple_tokens = ['fR9k1VS4TeaKEUFIYwIg7_:APA91bHYZP6qkhpyGUyIRZo5mHUEVJVi7c2TqnoHgb0z73F20xTPYnHe2OcnTOLa1tawOVFY5nKinKx4NIeb8eghnThRMFxGWPpQXAjmzEbqW9ZObrFPjac'];
 
         // Notification::route('fcm', $user_token)
         // ->notify(new CustomFirebaseNotification('FIRST PUSH NOTIFICATION', 'Hello world'));
 
         $firebaseService = new FirebaseService();
-        $firebaseService->sendNotification($user_token, 'Test Title', 'Test Body');
+        $firebaseService->sendMultipleNotification($multiple_tokens, 'Test Title', 'Test Body');
 
 
         return response()->json([
             'success' => 'true',
             'message' => 'Token found',
-            'token' => $user_token
+            'token' => json_encode($multiple_tokens)
         ]);
     } catch (\Throwable $th) {
         return response()->json([
