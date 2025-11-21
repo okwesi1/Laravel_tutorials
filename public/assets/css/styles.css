@@ -35,26 +35,100 @@ table td {
     vertical-align: middle;
 }
 .upload-box {
-            background-color: #f8f9fa;
-            border: 2px dashed #007bff;
-            padding: 40px;
-            text-align: center;
-            border-radius: 10px;
-            cursor: pointer;
-            margin-bottom: 20px;
-        }
-        .upload-box:hover {
-            background-color: #e9ecef;
-        }
-        .upload-box i {
-            font-size: 30px;
-            color: #007bff;
-        }
-        .file-name {
-            margin-top: 10px;
-            font-size: 1rem;
-            color: #555;
-        }
+    background-color: #f8f9fa;
+    border: 2px dashed #007bff;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.upload-box:hover {
+    background-color: #e9ecef;
+}
+.upload-box i {
+    font-size: 30px;
+    color: #007bff;
+}
+.file-name {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.custom-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+/* Modal Container */
+.custom-modal-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 900px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Modal Header */
+.custom-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.custom-modal-title {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Custom Close Button */
+.btn-close {
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Modal Body */
+.custom-modal-body {
+    padding: 20px 0;
+    overflow-y: auto;
+}
+
+/* Navigation Buttons */
+.pdf-navigation button {
+    background: #007bff;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.pdf-navigation button:hover {
+    background: #0056b3;
+}
+
+/* Canvas Container */
+.canvas-container {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+}
+
 @media (max-width: 768px) {
     .sidebar {
         width: 0;
